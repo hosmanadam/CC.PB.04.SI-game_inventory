@@ -6,10 +6,10 @@ def display_inventory(inventory):
   print(f"Total number of items: {sum(inventory.values())}")
 
 
+# NOTE: Past tense of name added_items makes no sense
+# Suggestion: new_items or items_to_add
 def add_to_inventory(inventory, added_items):
-  """Returns inventory after adding items in added_items
-  BAD NAMING: past tense of added_items makes no sense
-  SUGGESTION: new_items or items_to_add"""
+  """Returns inventory after adding items in added_items"""
   for thing in added_items:
     if thing in inventory:
       inventory[thing] += 1
@@ -18,7 +18,7 @@ def add_to_inventory(inventory, added_items):
   return inventory
 
 
-# TODO - refactor?
+# TODO: Refactor?
 # Very long, but logical and readable.
 # Breaking it into smaller functions seems counterintuitive,
 # as none of its parts are reuseable.
@@ -69,10 +69,10 @@ def print_table(inventory, order=''):
   print(f"Total number of items: {sum(item[0] for item in inventory)}")
 
 
+# NOTE: Function name doesn't describe full functionality
+# Suggestion: add_to_inventory_from_file()
 def import_inventory(inventory, filename='import_inventory.csv'):
-  """Returns inventory after adding items in CSV file.
-  BAD NAMING: doesn't describe full functionality
-  SUGGESTION: add_to_inventory_from_file()"""
+  """Returns inventory after adding items in CSV file."""
   with open(filename) as file:
     data = file.read()
     items = data.split(',')
