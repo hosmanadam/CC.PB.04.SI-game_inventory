@@ -10,7 +10,7 @@ def main():
   print("\n\nAFTER ADDING DRAGON LOOT:\n")
   print_table(inv, 'count,asc')
 
-  inv = import_inventory(inv)
+  inv = import_inventory(inv, filename='test_inventory.csv')
   print("\n\nAFTER ADDING IMPORT:\n")
   print_table(inv, 'count,asc')
 
