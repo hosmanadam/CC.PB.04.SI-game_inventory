@@ -18,15 +18,16 @@ def add_to_inventory(inventory, added_items):
   return inventory
 
 
+# TODO - refactor?
+# Very long, but logical and readable.
+# Breaking it into smaller functions seems counterintuitive,
+# as none of its parts are reuseable.
 def print_table(inventory, order=''):
   """Prints inventory in a neat form.
   Optional keyword arguments:
   order='count,desc' to sort in descending order
   order='count,asc' to sort in ascending order"""
-  # TODO - refactor?
-  # Very long, but logical and readable.
-  # Breaking it into smaller functions seems counterintuitive,
-  # as none of its parts are reuseable.
+
   header1 = 'count'
   header2 = 'item name'
   side_padding = 1
@@ -87,25 +88,3 @@ def export_inventory(inventory, filename='export_inventory.csv'):
       for i in range(item[1]):
         stuff.append(item[0])
     file.write(','.join(stuff))
-
-
-if __name__ == '__main__':
-  def main():
-    inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-    dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-    print("\n\nINITIAL STATE:\n")
-    print_table(inv, 'count,asc')
-
-    inv = add_to_inventory(inv, dragon_loot)
-    print("\n\nAFTER ADDING DRAGON LOOT:\n")
-    print_table(inv, 'count,asc')
-
-    inv = import_inventory(inv)
-    print("\n\nAFTER ADDING IMPORT:\n")
-    print_table(inv, 'count,asc')
-
-    export_inventory(inv)
-    print("\n\nEXPORT COMPLETE\n")
-
-
-  main()
