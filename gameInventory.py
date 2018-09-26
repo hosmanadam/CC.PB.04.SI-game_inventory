@@ -18,10 +18,9 @@ def add_to_inventory(inventory, added_items):
   return inventory
 
 
-# TODO: Refactor?
-# Very long, but logical and readable.
-# Breaking it into smaller functions seems counterintuitive,
-# as none of its parts are reuseable.
+# NOTE: Decided not to refactor, because too much work for nothing.
+# This is very long, but logical and readable.
+# Breaking it into smaller functions would be useless, as none of its parts are reuseable.
 def print_table(inventory, order=''):
   """Prints inventory in a neat form.
   Optional keyword arguments:
